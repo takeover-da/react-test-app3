@@ -51,7 +51,11 @@ const handleSubmit = async (e) => {
   const formData = new FormData();
   formData.append('title', board.title);
   formData.append('content', board.content);
-  formData.append('uploadFile', board.uploadFile);
+
+  // 사용자가 입력한 파일이 없다면 폼데이터에서 빼기!
+  if (board.uploadFile !== undefined) {
+    formData.append('uploadFile', board.uploadFile);
+  }
 
   const response = await axios.post(
     `${host}/board/register`,
