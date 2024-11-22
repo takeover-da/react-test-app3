@@ -16,7 +16,8 @@ import { useContext } from 'react';
 const BoardDetail = () => {
 
   // 파일 경로
-  const IMG_PATH = 'C://uploadfile/';
+  // const IMG_PATH = 'C://uploadfile/';
+  const IMG_PATH = '/image/';
 
   // 스토어에서 token state를 가져오기
   const token = useSelector((state) => state.member.token);
